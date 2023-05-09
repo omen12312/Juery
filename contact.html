@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles_35.css">
+    <script>
+      function storeForm() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var subject = document.getElementById("subject").value;
+        var message = document.getElementById("message").value;
+        
+        localStorage.setItem("name", name);
+        localStorage.setItem("email", email);
+        localStorage.setItem("subject", subject);
+        localStorage.setItem("message", message);
+      }
+
+      function goBack() {
+        window.history.back();
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Contact Us</h1>
+    </header>
+    <button onclick="goBack()" id="go-back">Go Back</button>
+    <form onsubmit="storeForm()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+      <br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+      <br>
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" required>
+      <br>
+      <label for="message">Message:</label>
+      <textarea id="message" rows="5" required></textarea>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+    <label for="filter">Filter list:</label>
+    <input type="text" id="filter" onkeyup="filterList()" placeholder="Type to filter">
+    <ul id="list">
+      <li><span class="icon">&#x1F354;</span> Pizza</li>
+      <li><span class="icon">&#x1F357;</span> Chicken</li>
+      <li><span class="icon">&#x1F369;</span> Sushi</li>
+      <li><span class="icon">&#x1F32E;</span> Tacos</li>
+      <li><span class="icon">&#x1F35A;</span> Salad</li>
+    </ul>
+    <script>
+      function filterList() {
+        var input, filter, ul, li, span, i, txtValue;
+        input = document.getElementById("filter");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("list");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+          span = li[i].getElementsByTagName("span")[0];
+          txtValue = span.textContent || span.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+          } else {
+            li[i].style.display = "none";
+          }
+        }
+      }
+    </script>
+    <footer>
+      <p>&copy; 2023 My Top 10 Favorite Restaurants. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
