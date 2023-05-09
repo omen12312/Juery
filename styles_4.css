@@ -1,0 +1,106 @@
+.panel {
+  background-color: #f1f1f1;
+  border: 1px solid #cccccc;
+  padding: 20px;
+  margin-top: 20px;
+  flex-basis: 20%;
+}
+
+.panel h2 {
+  margin-top: 0;
+}
+
+.panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.panel ul li {
+  margin-bottom: 10px;
+}
+
+.panel ul li a {
+  color: #333333;
+  text-decoration: none;
+}
+
+.panel ul li a:hover {
+  color: #cccccc;
+}
+
+.panel form {
+  margin-top: 20px;
+}
+
+.panel label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.panel input[type="text"] {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+  margin-bottom: 10px;
+}
+
+.panel button[type="submit"] {
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 10px 0;
+  text-decoration: none;
+}
+
+.panel button[type="submit"]:hover {
+  background-color: #cccccc;
+  color: #333333;
+}
+
+@media (max-width: 992px) {
+  .content {
+    flex-wrap: wrap;
+  }
+
+  .info,
+  .list {
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+
+  .random-pictures {
+    margin-left: 0;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .list {
+    flex-basis: 100%;
+  }
+
+  .panel {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .panel {
+    flex-basis: 100%;
+  }
+}
+.favorites ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+    }
+    
+    .favorites li {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    text-align: center;
+    }
